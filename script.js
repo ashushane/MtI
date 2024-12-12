@@ -1,29 +1,31 @@
-$(document).ready(function () {
-    function choice() {
-        let productChoice = prompt("Are you looking for Hair Products? Face Cosmetics? or Body Moisturizer?");
-        
-        if (productChoice === null) return;
-        
-        productChoice = productChoice.toLowerCase().trim();
-        let page = '';
-        
-        
-        if (productChoice.includes('hair')) {
-            page = 'pedestal.html';
-        } else if (productChoice.includes('face')) {
-            page = 'pedestal2.html';
-        } else if (productChoice.includes('body')) {
-            page = 'pedestal3.html';
-        }
-        
-        if (page) {
-            window.location.href = page;
-        } else {
-            alert("It seems like you have not decided yet. Why don't you try to browse our site first?");
-        }
+function choice() {
+    let productChoice = prompt("Are you looking for Hair Products? Face Cosmetics? or Body Moisturizer?");
+
+    if (productChoice === null) {
+        return; 
     }
 
-  
+    productChoice = productChoice.toLowerCase().trim(); 
+    let page = '';
+
+   
+    if (productChoice.includes('hair')) {
+        page = 'pedestal.html';
+    } else if (productChoice.includes('face')) {
+        page = 'pedestal2.html';
+    } else if (productChoice.includes('body')) {
+        page = 'pedestal3.html';
+    }
+
+    if (page) {
+        window.location.href = page;
+    } else {
+        alert("It seems like you have not decided yet. Why don't you try to browse our site first?");
+    }
+}
+
+$(document).ready(function() {
+ 
     $(".plus").click(function () {
         let quantity = parseInt($("#quantity").val());
         $("#quantity").val(quantity + 1);
